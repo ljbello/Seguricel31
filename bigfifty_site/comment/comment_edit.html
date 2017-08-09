@@ -1,0 +1,361 @@
+
+<!DOCTYPE html>
+<!--[if IE 9 ]><html class="ie9"><![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BIG FIFTY</title>
+
+  <!-- Vendor CSS -->
+  <link href="../vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+  <link href="../vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.css" rel="stylesheet">
+  <link href="../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+  <link href="../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+
+  <!-- CSS -->
+  <link href="../css/app.min.1.css" rel="stylesheet">
+  <link href="../css/app.min.2.css" rel="stylesheet">
+  <link href="../css/caribedev.css" rel="stylesheet">
+</head>
+
+<body>
+  <header id="header" class="clearfix" data-current-skin="blue_fifty">
+    <ul class="header-inner">
+      <li id="menu-trigger" data-trigger="#sidebar">
+        <div class="line-wrap">
+          <div class="line top"></div>
+          <div class="line center"></div>
+          <div class="line bottom"></div>
+        </div>
+      </li>
+
+      <li class="logo hidden-xs">
+        <a href="../index.html">BIG FIFTY</a>
+      </li>
+
+      <!-- <li class="pull-right">
+      <ul class="top-menu">
+      <li class="hidden-xs" id="chat-trigger" data-trigger="#chat">
+      <a href=""><i class="tm-icon zmdi zmdi-comment-alt-text"></i></a>
+    </li>
+  </ul>
+</li> -->
+</ul>
+
+
+<!-- Top Search Content -->
+<div id="top-search-wrap">
+  <div class="tsw-inner">
+    <i id="top-search-close" class="zmdi zmdi-arrow-left"></i>
+    <input type="text">
+  </div>
+</div>
+</header>
+
+<section id="main">
+  <aside id="sidebar" class="sidebar c-overflow">
+    <div class="game_profile_menu">
+      <a href="">
+        <!-- <div class="profile-pic">
+        <img src="img/all_sports.jpg" alt="">
+      </div> -->
+    </a>
+  </div>
+
+  <ul class="main-menu">
+    <li><a href="../user/user_list.html"><i class="zmdi zmdi-face"></i> User</a></li>
+    <li><a href="../sport/sport_list.html"><i class="zmdi zmdi-run"></i> Sport</a></li>
+    <li><a href="../league/league_list.html"><i class="zmdi zmdi-star"></i> League</a></li>
+    <li><a href="../category/category_list.html"><i class="zmdi zmdi-star-circle"></i> Category</a></li>
+    <li><a href="../life/life_list.html"><i class="zmdi zmdi-accounts-outline"></i> Life</a></li>
+    <li><a href="../team/team_list.html"><i class="zmdi zmdi-map"></i> Team</a></li>
+    <li><a href="../game/game_list.html"><i class="zmdi zmdi-gamepad"></i> Game</a></li>
+    <li><a href="../challenge/challenge_list.html"><i class="zmdi zmdi-flash"></i> Challenge</a></li>
+    <li><a href="../question/question_list.html"><i class="zmdi zmdi-help-outline"></i> Question</a></li>
+    <li><a href="../answer/answer_list.html"><i class="zmdi zmdi-check"></i> Answer</a></li>
+    <li><a href="../comment/comment_list.html"><i class="zmdi zmdi-sort-asc"></i> Comment</a></li>
+  </ul>
+</aside>
+
+<section id="content">
+  <div class="container">
+    <div class="block-header">
+      <h2>Comment</h2>
+    </div>
+    <!-- START CONTENT -->
+    <div class="card">
+      <div class="card-header ch-alt">
+        <h2>Edit a Comment</h2>
+      </div>
+      <form method="post" enctype="multipart/form-data" role="form" id="frm_comment">
+        <div class="card-body card-padding">
+          <div class="row">
+            <div class="col-md-4">
+              <br>
+              <div class=" col-md-12">
+                <div class="input-group fg-float">
+                  <span class="input-group-addon"><i class="zmdi zmdi-sort-asc"></i></span>
+                  <div class="fg-line fg-toggled">
+                    <input required type="text" class="form-control input-lg input-fg" id="comment_description" name="comment_description"  >
+                    <label class="fg-label">Description</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <br>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="zmdi zmdi-face"></i></span>
+                <div class="fg-line fg-toggled">
+                  <div class="select">
+                    <select required class="form-control input-lg" id="user_uuid" name="user_uuid">
+                      <option value="">Choose a User...</option>
+                    </select>
+                    <!-- <select class="chosen" data-placeholder="Choose a User..." id="comment_uuid" name="comment_uuid">
+                  </select> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <br>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="zmdi zmdi-gamepad"></i></span>
+              <div class="fg-line">
+                <div class="select">
+                  <select required class="form-control input-lg" id="game_uuid" name="game_uuid">
+                    <option value="">Choose a game...</option>
+                  </select>
+                  <!-- <select class="chosen" data-placeholder="Choose a User..." id="comment_uuid" name="comment_uuid">
+                </select> -->
+                <!-- <input required type="text" class="hidden" id="comment_available" name="comment_available"  > -->
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+      <br>
+      <br>
+      <div class="row">
+        <div class="pull-right">
+          <a id="btn_comment_return" name="btn_comment_return" class="btn btn-default btn-lg">Return</a> &nbsp; &nbsp;
+          <button id="btn_comment_save" name="btn_comment_save" type="submit" class="btn bgm-blue_fifty btn-lg">Save</button>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</form>
+</div>
+<!-- END CONTENT -->
+</div>
+</section>
+</section>
+
+<footer id="footer">
+  Copyright &copy; 2016 caribeDevelopers.com
+</footer>
+
+<!-- Page Loader -->
+<div class="page-loader">
+  <div class="preloader pls-blue">
+    <svg class="pl-circular" viewBox="25 25 50 50">
+      <circle class="plc-path" cx="50" cy="50" r="20" />
+    </svg>
+
+    <p>Please wait...</p>
+  </div>
+</div>
+
+<!-- Older IE warning message -->
+<!--[if lt IE 9]>
+<div class="ie-warning">
+<h1 class="c-white">Warning!!</h1>
+<p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+<div class="iew-container">
+<ul class="iew-download">
+<li>
+<a href="http://www.google.com/chrome/">
+<img src="img/browsers/chrome.png" alt="">
+<div>Chrome</div>
+</a>
+</li>
+<li>
+<a href="https://www.mozilla.org/en-US/firefox/new/">
+<img src="img/browsers/firefox.png" alt="">
+<div>Firefox</div>
+</a>
+</li>
+<li>
+<a href="http://www.opera.com">
+<img src="img/browsers/opera.png" alt="">
+<div>Opera</div>
+</a>
+</li>
+<li>
+<a href="https://www.apple.com/safari/">
+<img src="img/browsers/safari.png" alt="">
+<div>Safari</div>
+</a>
+</li>
+<li>
+<a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+<img src="img/browsers/ie.png" alt="">
+<div>IE (New)</div>
+</a>
+</li>
+</ul>
+</div>
+<p>Sorry for the inconvenience!</p>
+</div>
+<![endif]-->
+
+
+<!-- Javascript Libraries -->
+<script src="../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<script src="../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../vendors/bower_components/Waves/dist/waves.min.js"></script>
+<script src="../vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
+<script src="../vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.min.js"></script>
+
+<!-- Placeholder for IE9 -->
+<!--[if IE 9 ]>
+<script src="../vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+<![endif]-->
+
+<script src="../js/functions.js"></script>
+<script src="../js/caribedev.js"></script>
+<script src="../js/callback_caribe.js"></script>
+<script type="text/javascript">
+  var comment_to_edit = getParam('comment_uuid');
+  team_home_name= "";
+  team_visitor_name= "";
+  $(document).ready(function () {
+    caribedev_list('user', function (data) {
+      //data = $.parseJSON(data);
+      if (data.hasOwnProperty('error')) {
+        caribedev_user_list_error(data);
+      } else {
+        caribedev_user_list_ok(data);
+      }
+    });
+
+    caribedev_list('game', function (data) {
+      //data = $.parseJSON(data);
+      if (data.hasOwnProperty('error')) {
+        caribedev_game_list_error(data);
+      } else {
+        caribedev_game_list_ok(data);
+      }
+    });
+
+      caribedev_read('comment/', comment_to_edit, function(data){
+        if (data.hasOwnProperty('error') || data.comment.comment_description== null) {
+          caribedev_comment_detail_error(data);
+        }
+        else {
+          caribedev_comment_detail_ok(data);
+        }
+      });
+    });
+
+    function caribedev_user_list_ok(data) {
+      data = $.parseJSON(data);
+      $.each(data.user, function (i, item) {
+        var div_data = "<option value=" + item.user_uuid + ">" + item.user_name + "</option>";
+        $(div_data).appendTo('#user_uuid');
+      });
+    }
+
+    function caribedev_game_list_ok(data) {
+      data = $.parseJSON(data);
+      $.each(data.game, function (i, item) {
+
+        caribedev_read('team/', item.team_home_uuid ,function(_team){
+          team_home_name = _team.team.team_name;
+        });
+
+        caribedev_read('team/', item.team_visitor_uuid ,function(_team){
+          team_visitor_name = _team.team.team_name;
+        });
+        var div_data = "<option value=" + item.game_uuid + ">"+ format_date(item.game_start_datetime)+' -- '+ team_home_name+' Vs. '+ team_visitor_name+ "</option>";
+        $(div_data).appendTo('#game_uuid');
+        team_home_name= "";
+        team_visitor_name= "";
+
+      });
+    }
+
+function caribedev_comment_detail_ok(data) {
+  console.log(data);
+
+  $('#comment_description').val(data.comment.comment_description);
+  $('#user_uuid').val(data.comment.user_uuid);
+  $('#game_uuid').val(data.comment.game_uuid);
+}
+
+$("#btn_comment_return").click(function(){
+  window.location.href = 'comment_list.html';
+});
+
+$('#frm_comment').submit(function(e){
+//$("#btn_comment_save").click(function (e) {
+  var ref = $(this).find("[required]");
+  $(ref).each(function(){
+    if ( $(this).val() == '' )
+    {
+      notify(undefined, undefined, undefined, 'warning', "animated bounceIn", undefined, "Please, check the fields.");
+      $(this).focus();
+      e.preventDefault();
+      isValidated = false;
+
+      return false;
+    }
+  });
+  e.preventDefault();
+  $("#btn_comment_save").attr('disabled', 'disabled');
+  //$('#comment_available').val(($('#_comment_available').prop('checked') ? '1' : '0'));
+  var comment = $("#frm_comment").serialize();
+  caribedev_update(comment, 'comment/', comment_to_edit, function(data){
+    //var data = $.parseJSON(data);
+    if (data.hasOwnProperty('error')) {
+      caribedev_comment_update_error(data);
+    }
+    else {
+      caribedev_comment_update_ok(data);
+    }
+  });
+
+});
+
+function caribedev_comment_update_ok(data){
+  notify(undefined, undefined, undefined, 'success', "animated bounceIn", undefined, 'Comment updated Successfully!');
+  window.setTimeout(function(){
+    window.location.href = "comment_list.html";
+  }, 2050);
+}
+//ERROR SECTION
+function caribedev_comment_update_error(data){
+  notify(undefined, undefined, undefined, 'danger', "animated bounceIn", undefined, 'Sorry, comment not updated, Please contact your system administrator');
+  window.setTimeout(function(){
+    window.location.href = "comment_list.html";
+  }, 3050);
+}
+
+function caribedev_comment_detail_error(data){
+  notify(undefined, undefined, undefined, 'danger', "animated bounceIn", undefined, 'Sorry, comment not find, Please contact your system administrator');
+  window.setTimeout(function(){
+    window.location.href = "comment_list.html";
+  }, 3050);
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<!--[if IE 9 ]><html class="ie9"><![endif]-->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>BIG FIFTY</title>
+
+		<!-- Vendor CSS -->
+		<link href="../vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+	  <link href="../vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.css" rel="stylesheet">
+	  <link href="../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+	  <link href="../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+	  <link href="../vendors/bootgrid/jquery.bootgrid.min.css" rel="stylesheet">
+
+		<!-- CSS -->
+		<link href="../css/app.min.1.css" rel="stylesheet">
+		<link href="../css/app.min.2.css" rel="stylesheet">
+		<link href="../css/caribedev.css" rel="stylesheet">
+	</head>
+	<body>
+		<header id="header" class="clearfix" data-current-skin="blue_fifty">
+			<ul class="header-inner">
+				<li id="menu-trigger" data-trigger="#sidebar">
+					<div class="line-wrap">
+				  		<div class="line top"></div>
+				  		<div class="line center"></div>
+				  		<div class="line bottom"></div>
+					</div>
+				</li>
+				<li class="logo hidden-xs">
+					<a href="../index.html">BIGFIFTY</a>
+				</li>
+			</ul>
+			<!-- Top Search Content -->
+			<div id="top-search-wrap">
+				<div class="tsw-inner">
+					<i id="top-search-close" class="zmdi zmdi-arrow-left"></i>
+					<input type="text">
+				</div>
+			</div>
+		</header>
+		<section id="main">
+			<aside id="sidebar" class="sidebar c-overflow">
+				<div class="game_profile_menu">
+					<a href="">
+				</a>
+				</div>
+				<ul class="main-menu">
+					<li><a href="../user/user_list.html"><i class="zmdi zmdi-face"></i> User</a></li>
+					<li><a href="../sport/sport_list.html"><i class="zmdi zmdi-run"></i> Sport</a></li>
+					<li><a href="../league/league_list.html"><i class="zmdi zmdi-star"></i> League</a></li>
+					<li><a href="../category/category_list.html"><i class="zmdi zmdi-star-circle"></i> Category</a></li>
+					<li><a href="../life/life_list.html"><i class="zmdi zmdi-accounts-outline"></i> Life</a></li>
+					<li><a href="../team/team_list.html"><i class="zmdi zmdi-map"></i> Team</a></li>
+					<li><a href="../game/game_list.html"><i class="zmdi zmdi-gamepad"></i> Game</a></li>
+					<li><a href="../challenge/challenge_list.html"><i class="zmdi zmdi-flash"></i> Challenge</a></li>
+					<li><a href="../question/question_list.html"><i class="zmdi zmdi-help-outline"></i> Question</a></li>
+					<li><a href="../answer/answer_list.html"><i class="zmdi zmdi-check"></i> Answer</a></li>
+					<li><a href="../comment/comment_list.html"><i class="zmdi zmdi-sort-asc"></i> Comment</a></li>
+				</ul>
+		  	</aside>
+		    <section id="content">
+			    <div class="container">
+			      	<div class="block-header">
+			        	<h2>Question</h2>
+			      	</div>
+			      	<!-- START CONTENT -->
+			      	<div class="card">
+				        <div class="card-header ch-alt">
+				          <h2>Question list</h2>
+				            <a href="question_create.html"><button type="button" class="btn bgm-blue_fifty btn-float waves-effect" id="btn_question_new" name="btn_question_new"><i class="zmdi zmdi-plus"></i></button></a>
+				        </div>
+						<br>
+						<br>
+						<div class="table-responsive">
+          					<table id="tbl_question" class="table table-striped table-vmiddle">
+            					<thead>
+									<tr>
+										<th data-column-id="question_id">ID</th>
+										<!-- <th data-column-id="question_datetime_created">Date Created</th> -->
+										<th data-column-id="question_description">Description</th>
+										<!-- <th data-column-id="question_status">Status</th> -->
+										<th data-column-id="commands" data-formatter="commands" data-sortable="false">Actions</th>
+									</tr>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<!-- END CONTENT -->
+				</div>
+			</section>
+		</section>
+		<footer id="footer">
+			Copyright &copy; 2016 caribeDevelopers.com
+		</footer>
+		<!-- Page Loader -->
+		<div class="page-loader">
+			<div class="preloader pls-blue">
+				<svg class="pl-circular" viewBox="25 25 50 50">
+					<circle class="plc-path" cx="50" cy="50" r="20" />
+				</svg>
+
+				<p>Please wait...</p>
+			</div>
+		</div>
+		<!-- Javascript Libraries -->
+		<script src="../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+		<script src="../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+		<script src="../vendors/bower_components/Waves/dist/waves.min.js"></script>
+		<script src="../vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
+		<script src="../vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.min.js"></script>
+		<script src="../vendors/bootgrid/jquery.bootgrid.updated.min.js"></script>
+		<script src="../js/functions.js"></script>
+		<script src="../js/caribedev.js"></script>
+		<script src="../js/callback_caribe.js"></script>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//Command Buttons
+				caribedev_list('question', function(data){
+					var obj = $.parseJSON(data);
+					if (obj.hasOwnProperty('error')) {
+						caribedev_question_list_error(data);
+					}
+					else {
+						caribedev_question_list_ok(data);
+					}
+				});
+				$("#tbl_question").bootgrid({
+					searchSettings: {
+						delay: 100,
+						characters: 3,
+						caseSensitive: false
+					}
+				});
+			});
+
+			//OK SECTION
+			function caribedev_question_list_ok(data){
+				var data = $.parseJSON(data);
+				var len = data.questions.length;
+				for(var i = 0; i < len ; i++ ){
+					$("#tbl_question").bootgrid('append',
+					[{
+						question_id: '<a href="question_detail.html?question_uuid=' +data.questions[i].question_uuid+'">' + data.questions[i].question_id + '</a>',
+						// question_datetime_created: '<a href="question_detail.html?question_uuid=' +data.questions[i].question_uuid+'">' + format_date(data.questions[i].question_create_datetime) + '</a>',
+						question_description: '<a href="question_detail.html?question_uuid=' +data.questions[i].question_uuid+'">' + data.questions[i].question_description + '</a>',
+						// question_status: '<a href="question_detail.html?question_uuid=' +data.questions[i].question_uuid+'">' + data.questions[i].question_status + '</a>',
+						commands: "<button type=\"button\" class=\"btn btn-icon command-edit waves-effect waves-circle\" data-row-id=\"" + data.questions[i].question_uuid+ "\"><span class=\"zmdi zmdi-edit\"></span></button> " +
+						"<button type=\"button\" onclick=\"delete_button(\'"+data.questions[i].question_uuid+"\')\" class=\"btn btn-icon command-delete waves-effect waves-circle\" data-row-id=\"" + data.questions[i].question_uuid+ "\"><span class=\"zmdi zmdi-delete\"></span></button>"
+					}]
+					).on("loaded.rs.jquery.bootgrid", function () {
+						/* Action to delete */
+						$("#tbl_question").find(".command-edit").on("click", function (e) {
+							var domElement = $(e.currentTarget);
+							window.location.href = 'question_edit.html?question_uuid=' + domElement.attr('data-row-id');
+						});
+						$("#tbl_question").find(".command-manage").on("click", function (e) {
+							var domElement = $(e.currentTarget);
+							window.location.href = 'question_manage.html?question_uuid=' + domElement.attr('data-row-id');
+						});
+
+					});
+				}
+			}
+
+			function delete_button(question_uuid){
+				caribedev_delete('question/', question_uuid, function(data){
+					data = $.parseJSON(data);
+					if (data.hasOwnProperty('error')) {
+						caribedev_question_delete_error(data);
+					}
+					else {
+						caribedev_question_delete_ok(data);
+					}
+				});
+			}
+			function caribedev_question_delete_ok(data){
+				notify(undefined, undefined, undefined, 'success', "animated bounceIn", undefined, 'Question Deleted Successfully!');
+
+				window.setTimeout(function(){
+					location.reload();
+				}, 1500);
+			}
+
+			//ERROR SECTION
+
+			function caribedev_question_delete_error(data) {
+				notify(undefined, undefined, undefined, 'danger', "animated bounceIn", undefined, 'Sorry, error deleting question, Please contact your system administrator');
+				console.log(data);
+			}
+
+			function caribedev_question_list_error(data){
+				notify(undefined, undefined, undefined, 'danger', "animated bounceIn", undefined, 'Sorry, error listing questions, Please contact your system administrator');
+				//console.log(data);
+			}
+
+			$('#btn_question_new').click(function () {
+				window.location.href = 'question_create.html';
+			});
+		</script>
+	</body>
+</html>

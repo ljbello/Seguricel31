@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<!--[if IE 9 ]><html class="ie9"><![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BIG FIFTY</title>
+
+  <!-- Vendor CSS -->
+  <link href="../vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+  <link href="../vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.css" rel="stylesheet">
+  <link href="../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+  <link href="../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+  <link href="../vendors/bower_components/bootstrap-select/dist/css/bootstrap-select.css" rel="stylesheet">
+  <link href="../vendors/bootgrid/jquery.bootgrid.min.css" rel="stylesheet">
+  <link href="../vendors/bower_components/chosen/chosen.min.css" rel="stylesheet">
+  <link href="../vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+  <!-- CSS -->
+  <link href="../css/app.min.1.css" rel="stylesheet">
+  <link href="../css/app.min.2.css" rel="stylesheet">
+  <link href="../css/caribedev.css" rel="stylesheet">
+</head>
+
+<body>
+  <header id="header" class="clearfix" data-current-skin="blue_fifty">
+    <ul class="header-inner">
+      <li id="menu-trigger" data-trigger="#sidebar">
+        <div class="line-wrap">
+          <div class="line top"></div>
+          <div class="line center"></div>
+          <div class="line bottom"></div>
+        </div>
+      </li>
+      <li class="logo hidden-xs">
+        <a href="../index.html">BIG FIFTY</a>
+      </li>
+    </ul>
+    <!-- Top Search Content -->
+    <div id="top-search-wrap">
+      <div class="tsw-inner">
+        <i id="top-search-close" class="zmdi zmdi-arrow-left"></i>
+        <input type="text">
+      </div>
+    </div>
+  </header>
+  <section id="main">
+    <aside id="sidebar" class="sidebar c-overflow">
+      <div class="game_profile_menu">
+        <a href="">
+          <!-- <div class="profile-pic">
+          <img src="img/all_sports.jpg" alt="">
+        </div> -->
+      </a>
+    </div>
+
+    <ul class="main-menu">
+      <li><a href="../user/user_list.html"><i class="zmdi zmdi-face"></i> User</a></li>
+      <li><a href="../sport/sport_list.html"><i class="zmdi zmdi-run"></i> Sport</a></li>
+      <li><a href="../league/league_list.html"><i class="zmdi zmdi-star"></i> League</a></li>
+      <li><a href="../category/category_list.html"><i class="zmdi zmdi-star-circle"></i> Category</a></li>
+      <li><a href="../life/life_list.html"><i class="zmdi zmdi-accounts-outline"></i> Life</a></li>
+      <li><a href="../team/team_list.html"><i class="zmdi zmdi-map"></i> Team</a></li>
+      <li><a href="../game/game_list.html"><i class="zmdi zmdi-gamepad"></i> Game</a></li>
+      <li><a href="../challenge/challenge_list.html"><i class="zmdi zmdi-flash"></i> Challenge</a></li>
+      <li><a href="../question/question_list.html"><i class="zmdi zmdi-help-outline"></i> Question</a></li>
+      <li><a href="../answer/answer_list.html"><i class="zmdi zmdi-check"></i> Answer</a></li>
+      <li><a href="../comment/comment_list.html"><i class="zmdi zmdi-sort-asc"></i> Comment</a></li>
+    </ul>
+  </aside>
+  <aside id="chat" class="sidebar c-overflow">
+    <div class="chat-search">
+      <div class="fg-line">
+        <input type="text" class="form-control" placeholder="Search People">
+      </div>
+    </div>
+
+  </aside>
+  <section id="content">
+    <div class="container">
+      <div class="block-header">
+        <h2>User</h2>
+      </div>
+      <div class="card">
+        <div class="card-header ch-alt">
+          <h2>User Details</h2>
+          <button id="btn_user_edit" name="btn_user_edit" class="btn bgm-blue_fifty btn-float waves-effect"><i class="zmdi zmdi-edit"></i></button>
+        </div>
+        <div class="card-body card-padding">
+          <div class="row">
+            <div class="col-md-4">
+              <dl class="dl-horizontal">
+                <dt> <i class="zmdi zmdi-account zmdi-hc-fw"></i> Name:</dt>
+                <dd id="user_name"></dd>
+                <br/>
+                <br/>
+                <dt> <i class="zmdi zmdi-globe zmdi-hc-fw"></i> Country:</dt>
+                <dd id="user_country"></dd>
+                <br/>
+                <br/>
+                <dt> <i class="zmdi zmdi-home"></i> City:</dt>
+                <dd id="user_city"></dd>
+
+              </dl>
+            </div>
+            <div class="col-md-4">
+              <dl class="dl-horizontal">
+                <dt> <i class="zmdi zmdi-email zmdi-hc-fw"></i> Email:</dt>
+                <dd id="user_email"></dd>
+                <br/>
+                <br/>
+                <dt> <i class="zmdi zmdi-phone zmdi-hc-fw"></i> Phone:</dt>
+                <dd id="user_phone"></dd>
+                <br/>
+                <br/>
+                <dt> <i class="zmdi zmdi-facebook"></i> Facebook:</dt>
+                <dd id="user_facebook"></dd>
+                <br/>
+                <br/>
+              </dl>
+            </div>
+            <div class="col-md-4">
+              <dl class="dl-horizontal">
+                <dt> <i class="zmdi zmdi-account-box zmdi-hc-fw"></i> Password:</dt>
+                <dd id="user_password"></dd>
+                <br/>
+              </dl>
+            </div>
+          </div>
+          <br/>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="pull-right">
+                <button id="btn_user_return" name="btn_user_return" class="btn btn-default btn-lg" type="button">Return</button> &nbsp; &nbsp;
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END CONTENT -->
+    </div>
+  </section>
+</section>
+<footer id="footer">
+  Copyright &copy; 2016 caribeDevelopers.com
+</footer>
+<!-- Page Loader -->
+<div class="page-loader">
+  <div class="preloader pls-blue">
+    <svg class="pl-circular" viewBox="25 25 50 50">
+      <circle class="plc-path" cx="50" cy="50" r="20" />
+    </svg>
+    <p>Please wait...</p>
+  </div>
+</div>
+
+<!-- Older IE warning message -->
+<!--[if lt IE 9]>
+<div class="ie-warning">
+<h1 class="c-white">Warning!!</h1>
+<p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+<div class="iew-container">
+<ul class="iew-download">
+<li>
+<a href="http://www.google.com/chrome/">
+<img src="../img/browsers/chrome.png" alt="">
+<div>Chrome</div>
+</a>
+</li>
+<li>
+<a href="https://www.mozilla.org/en-US/firefox/new/">
+<img src="../img/browsers/firefox.png" alt="">
+<div>Firefox</div>
+</a>
+</li>
+<li>
+<a href="http://www.opera.com">
+<img src="../img/browsers/opera.png" alt="">
+<div>Opera</div>
+</a>
+</li>
+<li>
+<a href="https://www.apple.com/safari/">
+<img src="../img/browsers/safari.png" alt="">
+<div>Safari</div>
+</a>
+</li>
+<li>
+<a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+<img src="../img/browsers/ie.png" alt="">
+<div>IE (New)</div>
+</a>
+</li>
+</ul>
+</div>
+<p>Sorry for the inconvenience!</p>
+</div>
+<![endif]-->
+
+
+<!-- Javascript Libraries -->
+<script src="../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../vendors/bower_components/Waves/dist/waves.min.js"></script>
+<script src="../vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
+<script src="../vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.min.js"></script>
+<script src="../vendors/bootgrid/jquery.bootgrid.updated.min.js"></script>
+<script src="../vendors/bower_components/chosen/chosen.jquery.min.js"></script>
+<script src="../vendors/bower_components/moment/min/moment.min.js"></script>
+<script src="../vendors/bower_components/bootstrap-select/dist/js/bootstrap-select.js"></script>
+<script src="../vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../js/functions.js"></script>
+<script src="../js/caribedev.js"></script>
+<script src="../js/callback_caribe.js"></script>
+<script type="text/javascript">
+var user = getParam('user_uuid');
+$(document).ready(function () {
+  caribedev_read('user/', user, function(data){
+    if (data.hasOwnProperty('error') || data.user.user_name== null) {
+      caribedev_user_detail_error(data);
+    }
+    else {
+      caribedev_user_detail_ok(data);
+    }
+  });
+});
+function caribedev_user_detail_ok(data) {
+  console.log(data);
+  $('#user_name').text(data.user.user_name);
+  $('#user_email').text(data.user.user_email);
+  $('#user_country').text(data.user.user_country);
+  $('#user_phone').text(data.user.user_phone);
+  $('#user_city').text(data.user.user_city);
+  $('#user_datetime_create').text(format_date(data.user.user_datetime_create));
+  $('#user_facebook').text(data.user.user_facebook);
+  $('#user_password').text(data.user.user_password);
+}
+
+$("#btn_user_return").click(function(){
+  window.location.href = 'user_list.html';
+});
+$('#btn_user_edit').click(function () {
+  window.location.href = 'user_edit.html?user_uuid=' + user;
+});
+
+//ERROR SECTION
+
+function caribedev_user_detail_error(data){
+  notify(undefined, undefined, undefined, 'danger', "animated bounceIn", undefined, 'Sorry, user not find, Please contact your system administrator');
+  window.setTimeout(function(){
+    window.location.href = "user_list.html";
+  }, 3050);
+}
+
+</script>
+</body>
+</html>

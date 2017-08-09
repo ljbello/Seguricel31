@@ -1,0 +1,471 @@
+
+<!DOCTYPE html>
+<!--[if IE 9 ]><html class="ie9"><![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BIG FIFTY</title>
+
+  <!-- Vendor CSS -->
+  <link href="../vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+  <link href="../vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.css" rel="stylesheet">
+  <link href="../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+  <link href="../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+  <link href="../vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+
+
+  <!-- CSS -->
+  <link href="../css/app.min.1.css" rel="stylesheet">
+  <link href="../css/app.min.2.css" rel="stylesheet">
+  <link href="../css/caribedev.css" rel="stylesheet">
+</head>
+
+<body>
+  <header id="header" class="clearfix" data-current-skin="blue_fifty">
+    <ul class="header-inner">
+      <li id="menu-trigger" data-trigger="#sidebar">
+        <div class="line-wrap">
+          <div class="line top"></div>
+          <div class="line center"></div>
+          <div class="line bottom"></div>
+        </div>
+      </li>
+      <li class="logo hidden-xs">
+        <a href="../index.html">BIG FIFTY</a>
+      </li>
+    </ul>
+
+    <!-- Top Search Content -->
+    <div id="top-search-wrap">
+      <div class="tsw-inner">
+        <i id="top-search-close" class="zmdi zmdi-arrow-left"></i>
+        <input type="text">
+      </div>
+    </div>
+  </header>
+
+  <section id="main">
+    <aside id="sidebar" class="sidebar c-overflow">
+      <div class="game_profile_menu">
+        <a href="">
+          <!-- <div class="profile-pic">
+          <img src="img/all_sports.jpg" alt="">
+        </div> -->
+      </a>
+    </div>
+
+    <ul class="main-menu">
+      <li><a href="../user/user_list.html"><i class="zmdi zmdi-face"></i> User</a></li>
+      <li><a href="../sport/sport_list.html"><i class="zmdi zmdi-run"></i> Sport</a></li>
+      <li><a href="../league/league_list.html"><i class="zmdi zmdi-star"></i> League</a></li>
+      <li><a href="../category/category_list.html"><i class="zmdi zmdi-star-circle"></i> Category</a></li>
+      <li><a href="../life/life_list.html"><i class="zmdi zmdi-accounts-outline"></i> Life</a></li>
+      <li><a href="../team/team_list.html"><i class="zmdi zmdi-map"></i> Team</a></li>
+      <li><a href="../game/game_list.html"><i class="zmdi zmdi-gamepad"></i> Game</a></li>
+      <li><a href="../challenge/challenge_list.html"><i class="zmdi zmdi-flash"></i> Challenge</a></li>
+      <li><a href="../question/question_list.html"><i class="zmdi zmdi-help-outline"></i> Question</a></li>
+      <li><a href="../answer/answer_list.html"><i class="zmdi zmdi-check"></i> Answer</a></li>
+      <li><a href="../comment/comment_list.html"><i class="zmdi zmdi-sort-asc"></i> Comment</a></li>
+    </ul>
+  </aside>
+
+  <aside id="chat" class="sidebar c-overflow">
+
+    <div class="chat-search">
+      <div class="fg-line">
+        <input type="text" class="form-control" placeholder="Search People">
+      </div>
+    </div>
+
+  </aside>
+  <section id="content">
+    <div class="container">
+      <div class="block-header">
+        <h2>Game</h2>
+      </div>
+      <!-- START CONTENT -->
+      <div class="card">
+        <div class="card-header ch-alt">
+          <h2>Add a new Game</h2>
+          <button id="game_clear" name="game_clear" class="btn bgm-blue_fifty btn-float waves-effect"><i class="zmdi zmdi-plaster"></i></button>
+        </div>
+        <br>
+        <br>
+        <form method="post" enctype="multipart/form-data" role="form" id="frm_game">
+          <input type="text" class="hidden" id="team_home_uuid" name="team_home_uuid">
+          <input type="text" class="hidden" id="team_visitor_uuid" name="team_visitor_uuid">
+          <input type="text" class="hidden" id="game_home_score" name="game_home_score">
+          <input type="text" class="hidden" id="game_visitor_score" name="game_visitor_score">
+          <input type="text" class="hidden" id="team_winner_uuid" name="team_winner_uuid">
+          <input type="text" class="hidden" id="game_start_datetime_onload" name="game_start_datetime_onload">
+
+          <div class="card-body card-padding">
+            <div class="row" >
+              <div class="col-md-8">
+                <div class="row" >
+                  <div class="col-md-5">
+                    <br>
+                    <div class="input-group form-group">
+                      <span class="input-group-addon"><i class="zmdi zmdi-calendar"></i></span>
+                      <div class="dtp-container fg-line">
+                        <input type='text' id="game_start_datetime" name="game_start_datetime" class="form-control input-lg date-time-picker" placeholder="Start Date..." required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-9 col-xs-9">
+                    <br>
+                    <div class="input-group form-group">
+                      <span class="input-group-addon"><i class="zmdi zmdi-map"></i></span>
+                      <input type="text" class="form-control input-lg" id="game_team_search" name="game_team_search" placeholder="Please, search a Home team...">
+                    </div>
+                  </div>
+                  <br>
+                  <div class="col-md-1 col-sm-1 col-xs-1">
+                    <button type="submit" id="btn_team_search" name="btn_game_team_search" class="btn bgm-red_fifty btn-sm m-t-5"><i class="zmdi zmdi-search"></i></button>
+                  </div>
+                </div>
+                <br>
+                <div class="row" >
+                  <div class="table-responsive">
+                    <table id="tbl_team_result" class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th>Name</th>
+                          <th>Sport</th>
+                          <th>League</th>
+                          <!-- <th>Add Team</th> -->
+                        </tr>
+                      </thead>
+                      <tbody>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="card-body card-padding">
+                  <div class="col-md-12">
+                    <div id="div_home" class="bgm-red brd-2 p-15 hidden">
+                      <center>
+                        <h2 id='home_team' class="m-0 c-white f-300 "></h2>
+                      </center>
+                    </div>
+                  </div>
+                  <center>
+                    <h2 class="center">Vs.</h2>
+                  </center>
+                  <div class="col-md-12">
+                    <div id="div_visitor" class="bgm-blue_fifty brd-2 p-15 hidden">
+                      <center>
+                        <h2 id='visitor_team'class="m-0 c-white f-300"></h2>
+                      </center>
+                    </div>
+                  </div>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <div class="row">
+
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="zmdi zmdi-star"></i></span>
+                      <div class="fg-line">
+                        <div class="select">
+                          <select class="form-control input-lg" id="game_status" name="game_status">
+                            <option value="-1">Choose a Status...</option>
+                            <option value="1">Pending</option>
+                            <option value="2">Started</option>
+                            <option value="4">Rescheduled</option>
+                            <option value="5">Cancelled</option>
+                          </select>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                </div>
+              </div>
+            </div>
+            <br>
+            <!-- <hr> -->
+            <div class="row">
+              <div class="pull-right">
+                <a id="btn_game_return" name="btn_game_return" class="btn btn-default btn-lg">Return</a> &nbsp; &nbsp;
+                <button id="btn_game_update" name="btn_game_update" type="submit" class="btn bgm-blue_fifty btn-lg">Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+      </div>
+    </form>
+  </div>
+  <!-- END CONTENT -->
+</div>
+</section>
+</section>
+
+<footer id="footer">
+  Copyright &copy; 2016 caribeDevelopers.com
+</footer>
+
+<!-- Page Loader -->
+<div class="page-loader">
+  <div class="preloader pls-blue">
+    <svg class="pl-circular" viewBox="25 25 50 50">
+      <circle class="plc-path" cx="50" cy="50" r="20" />
+    </svg>
+
+    <p>Please wait...</p>
+  </div>
+</div>
+
+<!-- Javascript Libraries -->
+<script src="../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<script src="../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../vendors/bower_components/Waves/dist/waves.min.js"></script>
+<script src="../vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
+<script src="../vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.min.js"></script>
+
+<script src="../vendors/bower_components/moment/min/moment.min.js"></script>
+<script src="../vendors/bower_components/bootstrap-select/dist/js/bootstrap-select.js"></script>
+<script src="../vendors/bower_components/nouislider/distribute/jquery.nouislider.all.min.js"></script>
+<script src="../vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../vendors/bower_components/typeahead.js/dist/typeahead.bundle.min.js"></script>
+<script src="../vendors/summernote/dist/summernote-updated.min.js"></script>
+
+<!-- maxlength="50" placeholder for IE9 -->
+<!--[if IE 9 ]>
+<script src="../vendors/bower_components/jquery-maxlength="50" placeholder/jquery.maxlength="50" placeholder.min.js"></script>
+<![endif]-->
+<script src="../vendors/bower_components/chosen/chosen.jquery.min.js"></script>
+<script src="../vendors/fileinput/fileinput.min.js"></script>
+<script src="../vendors/input-mask/input-mask.min.js"></script>
+<script src="../vendors/farbtastic/farbtastic.min.js"></script>
+
+<script src="../js/functions.js"></script>
+<script src="../js/caribedev.js"></script>
+<script src="../js/callback_caribe.js"></script>
+
+<script type="text/javascript">
+
+var game_to_edit = getParam('game_uuid');
+$(document).ready(function () {
+  caribedev_read('game/', game_to_edit, function(data){
+    if (data.game.game_status == 3) {
+      caribedev_game_detail_finishied(data);
+    }
+    else if  (data.hasOwnProperty('error') || data.game.game_uuid== null)  {
+      caribedev_game_detail_error(data);
+    }
+    else{
+      caribedev_game_detail_ok(data);
+    }
+  });
+});
+
+
+
+function caribedev_game_detail_ok(data){
+  notify(undefined, undefined, undefined, 'info', "animated bounceIn", undefined, 'INFO: to update this game, clean the form');
+  var team_home_name= "";
+  var team_visitor_name= "";
+  $('#game_start_datetime').val(format_date(data.game.game_start_datetime)+' '+format_time(data.game.game_start_datetime));
+  $('#div_home').removeClass('hidden');
+  $('#div_visitor').removeClass('hidden');
+  $('#team_home_uuid').val(data.game.team_home_uuid);
+  $('#team_visitor_uuid').val(data.game.team_visitor_uuid);
+  $('#game_home_score').val(data.game.game_home_score);
+  $('#game_visitor_score').val(data.game.game_visitor_score);
+  $('#team_winner_uuid').val(data.game.team_winner_uuid);
+  $('#game_status').val(data.game.game_status);
+  $('#game_start_datetime_onload').val(format_date(data.game.game_start_datetime)+' '+format_time(data.game.game_start_datetime));
+
+
+
+  caribedev_read('team/', data.game.team_home_uuid ,function(_team){
+    team_home_name = _team.team.team_name;
+  });
+
+  caribedev_read('team/', data.game.team_visitor_uuid ,function(_team){
+    team_visitor_name = _team.team.team_name;
+  });
+
+  $('#home_team').text(team_home_name);
+  $('#visitor_team').text(team_visitor_name);
+}
+
+$('#game_start_datetime').datetimepicker({
+  format : "YYYY-MM-DD hh:mm",
+  minDate:new Date()
+});
+
+$("#btn_game_return").click(function (e) {
+  window.location.href = "game_list.html";
+});
+
+$("#btn_team_search").click(function (e) {
+  e.preventDefault();
+
+  var _game_team = $("#game_team_search").val();
+
+  if(_game_team.length<3)
+  {
+    notify(undefined, undefined, undefined, 'warning', "animated bounceIn", undefined, 'Sorry, please type 3 letters almost');
+  }
+  else {
+
+    $("#tbl_team_result>tbody").empty();
+    caribedev_read('team/by_name/availables/', _game_team, function(data){
+      if (data.hasOwnProperty('error')) {
+        caribedev_game_team_search_error(data);
+      }
+      else {
+        caribedev_game_team_search_ok(data);
+      }
+    });
+  }
+});
+
+function caribedev_game_team_search_ok(data){
+  var len = data.team.length;
+
+  if (len == 0){
+    notify(undefined, undefined, undefined, 'info', "animated bounceIn", undefined, 'Tem Not found, please enter another team name');
+  }
+  else{
+    var _row ="";
+    var league ="";
+
+    for(var i = 0; i < len ; i++ ){
+
+      caribedev_read('sport/', data.team[i].sport_uuid ,function(_sport){
+        if (_sport.hasOwnProperty('error')) {
+          caribedev_team_list_error(_sport);
+        }
+        else {
+          sport = _sport.sport.sport_name;
+        }
+      });
+      caribedev_read('league/', data.team[i].league_uuid ,function(_league){
+        if (_league.hasOwnProperty('error')) {
+          caribedev_team_list_error(_league);
+        }
+        else {
+          league = _league.league.league_name;
+        }
+      });
+      _row += '<tr>';
+      _row += '<td><a onclick=\"add_team_to_game(\''+data.team[i].team_uuid+'\',\''+data.team[i].team_name+'\' )\">' + data.team[i].team_name + '</a></td>';
+      _row += '<td><a onclick=\"add_team_to_game(\''+data.team[i].team_uuid+'\',\''+data.team[i].team_name+'\' )\">' + sport + '</a></td>';
+      _row += '<td><a onclick=\"add_team_to_game(\''+data.team[i].team_uuid+'\',\''+data.team[i].team_name+'\' )\">' + league+ '</a></td>';
+      _row += '</tr>';
+
+      $("#tbl_team_result>tbody").append(_row);
+    }
+  }
+}
+
+function add_team_to_game(team_uuid, team_name){
+  $('#game_team_search').val("");
+  if ($('#home_team').text()==""){
+    $('#game_team_search').attr('placeholder','Please, search a Home team...');
+    $('#btn_team_search').removeClass('bgm-red_fifty');
+    $('#btn_team_search').addClass('bgm-blue_fifty');
+    $('#div_home').removeClass('hidden');
+    $('#team_home_uuid').val(team_uuid);
+    $('#home_team').text(team_name);
+  }
+  else{
+
+    $('#team_visitor_uuid').val(team_uuid);
+    $('#visitor_team').text(team_name);
+    $('#div_visitor').removeClass('hidden');
+    $('#game_team_search').attr('placeholder','');
+    $("#btn_team_search").attr('disabled', 'disabled');
+    $("#game_team_search").attr('disabled', 'disabled');
+  }
+
+  $("#tbl_team_result>tbody").empty();
+}
+
+$('#game_clear').click(function(e){
+  e.preventDefault();
+  $("#game_team_search").removeAttr('disabled');
+  $("#btn_team_search").removeAttr('disabled');
+  $('#btn_team_search').removeClass('bgm-blue_fifty');
+  $('#btn_team_search').addClass('bgm-red_fifty');
+  $('#game_team_search').attr('placeholder','And now, the visitor team..');
+  $('#team_home_uuid').val("");
+  $('#home_team').text("");
+  $('#team_visitor_uuid').val("");
+  $('#visitor_team').text("");
+  $('#div_visitor').addClass('hidden');
+  $('#div_home').addClass('hidden');
+  notify(undefined, undefined, undefined, 'info', "animated bounceIn", undefined, 'Game form clean, and now update the game');
+});
+
+$('#frm_game').submit(function(e){
+  e.preventDefault();
+  //
+  //
+
+  if($('#team_home_uuid').val()=="" || $('#team_visitor_uuid').val()=="")
+  {
+    notify(undefined, undefined, undefined, 'warning', "animated bounceIn", undefined, 'Sorry, You must set Home and Visitor Team');
+  }
+  else if( $('#game_start_datetime_onload').val()==$('#game_start_datetime').val() && $('#game_status').val()==4 ){
+    notify(undefined, undefined, undefined, 'info', "animated bounceIn", undefined, 'Sorry,to reschedule the game you must set another date');
+
+  }
+  else {
+    $("#btn_game_save").attr('disabled', 'disabled');
+    var game = $('#frm_game').serialize();
+    caribedev_update(game, 'game/', game_to_edit, function(data){
+      var data = $.parseJSON(data);
+      if (data.hasOwnProperty('error')) {
+        caribedev_game_update_error(data);
+      }
+      else {
+        caribedev_game_update_ok(data);
+      }
+    });
+  }
+
+});
+
+function caribedev_game_update_ok(data){
+  notify(undefined, undefined, undefined, 'success', "animated bounceIn", undefined, 'Game updated Successfully!');
+  window.setTimeout(function(){
+    window.location.href = "game_list.html";
+  }, 2050);
+}
+
+function caribedev_game_detail_error(data){
+  notify(undefined, undefined, undefined, 'danger', "animated bounceIn", undefined, 'Sorry, game not find, Please contact your system administrator');
+  window.setTimeout(function(){
+    window.location.href = "game_list.html";
+  }, 3050);
+}
+function caribedev_game_detail_finishied(data){
+  notify(undefined, undefined, undefined, 'danger', "animated bounceIn", undefined, 'Sorry, this game can not be edited because it was already played and finalized');
+  window.setTimeout(function(){
+    window.location.href = "game_list.html";
+  }, 4000);
+}
+
+
+function caribedev_game_update_error(data){
+  notify(undefined, undefined, undefined, 'danger', "animated bounceIn", undefined, 'Sorry, game not Updated, Please contact your system administrator');
+  window.setTimeout(function(){
+    window.location.href = "game_list.html";
+  }, 3050);
+}
+</script>
+
+</body>
+</html>

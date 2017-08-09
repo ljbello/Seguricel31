@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<!--[if IE 9 ]><html class="ie9"><![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BIG FIFTY</title>
+
+  <!-- Vendor CSS -->
+  <link href="../vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+  <link href="../vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.css" rel="stylesheet">
+  <link href="../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+  <link href="../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+  <link href="../vendors/bootgrid/jquery.bootgrid.min.css" rel="stylesheet">
+
+  <!-- CSS -->
+  <link href="../css/app.min.1.css" rel="stylesheet">
+  <link href="../css/app.min.2.css" rel="stylesheet">
+  <link href="../css/caribedev.css" rel="stylesheet">
+</head>
+
+<body>
+  <header id="header" class="clearfix" data-current-skin="blue_fifty">
+    <ul class="header-inner">
+      <li id="menu-trigger" data-trigger="#sidebar">
+        <div class="line-wrap">
+          <div class="line top"></div>
+          <div class="line center"></div>
+          <div class="line bottom"></div>
+        </div>
+      </li>
+
+      <li class="logo hidden-xs">
+        <a href="../index.html">BIG FIFTY</a>
+      </li>
+
+
+    </ul>
+
+
+    <!-- Top Search Content -->
+    <div id="top-search-wrap">
+      <div class="tsw-inner">
+        <i id="top-search-close" class="zmdi zmdi-arrow-left"></i>
+        <input type="text">
+      </div>
+    </div>
+  </header>
+
+  <section id="main">
+    <aside id="sidebar" class="sidebar c-overflow">
+      <div class="game_profile_menu">
+        <a href="">
+          <!-- <div class="profile-pic">
+          <img src="img/all_sports.jpg" alt="">
+        </div> -->
+      </a>
+    </div>
+
+    <ul class="main-menu">
+      <li><a href="../user/user_list.html"><i class="zmdi zmdi-face"></i> User</a></li>
+      <li><a href="../sport/sport_list.html"><i class="zmdi zmdi-run"></i> Sport</a></li>
+      <li><a href="../league/league_list.html"><i class="zmdi zmdi-star"></i> League</a></li>
+      <li><a href="../category/category_list.html"><i class="zmdi zmdi-star-circle"></i> Category</a></li>
+      <li><a href="../life/life_list.html"><i class="zmdi zmdi-accounts-outline"></i> Life</a></li>
+      <li><a href="../team/team_list.html"><i class="zmdi zmdi-map"></i> Team</a></li>
+      <li><a href="../game/game_list.html"><i class="zmdi zmdi-gamepad"></i> Game</a></li>
+      <li><a href="../challenge/challenge_list.html"><i class="zmdi zmdi-flash"></i> Challenge</a></li>
+      <li><a href="../question/question_list.html"><i class="zmdi zmdi-help-outline"></i> Question</a></li>
+      <li><a href="../answer/answer_list.html"><i class="zmdi zmdi-check"></i> Answer</a></li>
+      <li><a href="../comment/comment_list.html"><i class="zmdi zmdi-sort-asc"></i> Comment</a></li>
+    </ul>
+  </aside>
+
+  <section id="content">
+    <div class="container">
+      <div class="block-header">
+        <h2>Category</h2>
+      </div>
+      <!-- START CONTENT -->
+      <div class="card">
+        <div class="card-header ch-alt">
+          <h2>Category List</h2>
+          <button type="button" class="btn bgm-blue_fifty btn-float waves-effect" id="btn_category_new" name="btn_category_new"><i class="zmdi zmdi-plus"></i></button>
+        </div>
+        <br>
+        <br>
+        <div class="table-responsive">
+          <table id="tbl_category" class="table table-striped table-vmiddle">
+
+            <thead>
+              <br>
+              <tr>
+                <th data-column-id="category_id">ID</th>
+                <th data-column-id="category_name">Category</th>
+                <th data-column-id="commands" data-formatter="commands" data-sortable="false">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- <tr>
+              <td>CaribeDevelopers</td>
+              <td>14.10.2013</td>
+              <td>Pruebas WPS</td>
+            </tr> -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- END CONTENT -->
+  </div>
+  <div id="spinner" hidden><div class="fa fa-cog fa-spin fa-3x fa-fw"><i class=""></i></div></div>
+</section>
+</section>
+
+<footer id="footer">
+  Copyright &copy; 2016 caribeDevelopers.com
+</footer>
+
+<!-- Page Loader -->
+<div class="page-loader">
+  <div class="preloader pls-blue">
+    <svg class="pl-circular" viewBox="25 25 50 50">
+      <circle class="plc-path" cx="50" cy="50" r="20" />
+    </svg>
+
+    <p>Please wait...</p>
+  </div>
+</div>
+
+<!-- Older IE warning message -->
+<!--[if lt IE 9]>
+<div class="ie-warning">
+<h1 class="c-white">Warning!!</h1>
+<p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+<div class="iew-container">
+<ul class="iew-download">
+<li>
+<a href="http://www.google.com/chrome/">
+<img src="../img/browsers/chrome.png" alt="">
+<div>Chrome</div>
+</a>
+</li>
+<li>
+<a href="https://www.mozilla.org/en-US/firefox/new/">
+<img src="../img/browsers/firefox.png" alt="">
+<div>Firefox</div>
+</a>
+</li>
+<li>
+<a href="http://www.opera.com">
+<img src="../img/browsers/opera.png" alt="">
+<div>Opera</div>
+</a>
+</li>
+<li>
+<a href="https://www.apple.com/safari/">
+<img src="../img/browsers/safari.png" alt="">
+<div>Safari</div>
+</a>
+</li>
+<li>
+<a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+<img src="../img/browsers/ie.png" alt="">
+<div>IE (New)</div>
+</a>
+</li>
+</ul>
+</div>
+<p>Sorry for the inconvenience!</p>
+</div>
+<![endif]-->
+
+
+<!-- Javascript Libraries -->
+<script src="../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<script src="../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../vendors/bower_components/Waves/dist/waves.min.js"></script>
+<script src="../vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
+<script src="../vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.min.js"></script>
+<script src="../vendors/bootgrid/jquery.bootgrid.updated.min.js"></script>
+
+
+<!-- Placeholder for IE9 -->
+<!--[if IE 9 ]>
+<script src="../vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+<![endif]-->
+
+<script src="../js/functions.js"></script>
+<script src="../js/caribedev.js"></script>
+<script src="../js/callback_caribe.js"></script>
+
+<script type="text/javascript">
+
+
+
+$(document).ready(function(){
+  //Command Buttons
+  caribedev_list('category', function(data){
+    // data = $.parseJSON(data);
+    if (data.hasOwnProperty('error')) {
+      caribedev_category_list_error(data);
+    }
+    else {
+      caribedev_category_list_ok(data);
+    }
+  });
+  $("#tbl_category").bootgrid({
+    searchSettings: {
+      delay: 100,
+      characters: 3,
+      caseSensitive: false
+    }
+  });
+
+});
+
+//OK SECTION
+function caribedev_category_list_ok(data){
+  var data = $.parseJSON(data);
+  var len = data.category.length;
+
+  for(var i = 0; i < len ; i++ ){
+    $("#tbl_category").bootgrid('append',
+    [{
+      category_id: '<a href="category_detail.html?category_uuid=' +data.category[i].category_uuid+'">' + data.category[i].category_id + '</a>',
+      category_name: '<a href="category_detail.html?category_uuid=' +data.category[i].category_uuid+'">' + data.category[i].category_name + '</a>',
+      commands: "<button type=\"button\" class=\"btn btn-icon command-edit waves-effect waves-circle\" data-row-id=\"" + data.category[i].category_uuid+ "\"><span class=\"zmdi zmdi-edit\"></span></button> " +
+      "<button type=\"button\" onclick=\"delete_button(\'"+data.category[i].category_uuid+"\')\" class=\"btn btn-icon command-delete waves-effect waves-circle\" data-row-id=\"" + data.category[i].category_uuid+ "\"><span class=\"zmdi zmdi-delete\"></span></button>"
+    }]
+  ).on("loaded.rs.jquery.bootgrid", function () {
+
+    /* Action to delete */
+    $("#tbl_category").find(".command-edit").on("click", function (e) {
+      var domElement = $(e.currentTarget);
+      window.location.href = 'category_edit.html?category_uuid=' + domElement.attr('data-row-id');
+    });
+    $("#tbl_category").find(".command-manage").on("click", function (e) {
+      var domElement = $(e.currentTarget);
+      window.location.href = 'category_manage.html?category_uuid=' + domElement.attr('data-row-id');
+    });
+
+  });
+}
+}
+function delete_button(category_uuid){
+  caribedev_delete('category/', category_uuid, function(data){
+    data = $.parseJSON(data);
+    if (data.hasOwnProperty('error')) {
+      caribedev_category_delete_error(data);
+    }
+    else {
+      caribedev_category_delete_ok(data);
+    }
+  });
+}
+
+function caribedev_category_delete_ok(data){
+  notify(undefined, undefined, undefined, 'success', "animated bounceIn", undefined, 'Category Deleted Successfully!');
+
+  window.setTimeout(function(){
+    location.reload();
+  }, 1500);
+}
+
+//ERROR SECTION
+
+function caribedev_category_delete_error(data) {
+  notify(undefined, undefined, undefined, 'danger', "animated bounceIn", undefined, 'Sorry, error deleting category, Please contact your system administrator');
+
+  console.log(data);
+}
+
+function caribedev_category_list_error(data){
+  notify(undefined, undefined, undefined, 'danger', "animated bounceIn", undefined, 'Sorry, error listed category, Please contact your system administrator');
+  console.log(data);
+}
+
+
+$('#btn_category_new').click(function () {
+  // notify(undefined, undefined, undefined, 'danger', "animated bounceIn", undefined, 'Sorry, Please select a document');
+  window.location.href = 'category_create.html';
+});
+
+</script>
+</body>
+</html>

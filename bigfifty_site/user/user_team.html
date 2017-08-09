@@ -1,0 +1,545 @@
+
+<!DOCTYPE html>
+<!--[if IE 9 ]><html class="ie9"><![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BIG FIFTY</title>
+
+  <!-- Vendor CSS -->
+  <link href="../vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+  <link href="../vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.css" rel="stylesheet">
+  <link href="../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+  <link href="../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+  <link href="../vendors/bootgrid/jquery.bootgrid.min.css" rel="stylesheet">
+
+  <!-- CSS -->
+  <link href="../css/app.min.1.css" rel="stylesheet">
+  <link href="../css/app.min.2.css" rel="stylesheet">
+  <link href="../css/caribedev.css" rel="stylesheet">
+</head>
+
+<body>
+  <header id="header" class="clearfix" data-current-skin="blue_fifty">
+    <ul class="header-inner">
+      <li id="menu-trigger" data-trigger="#sidebar">
+        <div class="line-wrap">
+          <div class="line top"></div>
+          <div class="line center"></div>
+          <div class="line bottom"></div>
+        </div>
+      </li>
+
+      <li class="logo hidden-xs">
+        <a href="../index.html">BIG FIFTY</a>
+      </li>
+
+      <!-- <li class="pull-right">
+      <ul class="top-menu">
+      <li class="hidden-xs" id="chat-trigger" data-trigger="#chat">
+      <a href=""><i class="tm-icon zmdi zmdi-comment-alt-text"></i></a>
+    </li>
+  </ul>
+</li> -->
+</ul>
+
+
+<!-- Top Search Content -->
+<div id="top-search-wrap">
+  <div class="tsw-inner">
+    <i id="top-search-close" class="zmdi zmdi-arrow-left"></i>
+    <input type="text">
+  </div>
+</div>
+</header>
+
+<section id="main">
+  <aside id="sidebar" class="sidebar c-overflow">
+    <div class="game_profile_menu">
+      <a href="">
+        <!-- <div class="profile-pic">
+        <img src="img/all_teams.jpg" alt="">
+      </div> -->
+    </a>
+  </div>
+  <ul class="main-menu">
+    <li><a href="../user/user_list.html"><i class="zmdi zmdi-face"></i> User</a></li>
+    <li><a href="../sport/sport_list.html"><i class="zmdi zmdi-run"></i> Sport</a></li>
+    <li><a href="../league/league_list.html"><i class="zmdi zmdi-star"></i> League</a></li>
+    <li><a href="../category/category_list.html"><i class="zmdi zmdi-star-circle"></i> Category</a></li>
+    <li><a href="../life/life_list.html"><i class="zmdi zmdi-accounts-outline"></i> Life</a></li>
+    <li><a href="../team/team_list.html"><i class="zmdi zmdi-map"></i> Team</a></li>
+    <li><a href="../game/game_list.html"><i class="zmdi zmdi-gamepad"></i> Game</a></li>
+    <li><a href="../challenge/challenge_list.html"><i class="zmdi zmdi-flash"></i> Challenge</a></li>
+    <li><a href="../question/question_list.html"><i class="zmdi zmdi-help-outline"></i> Question</a></li>
+    <li><a href="../answer/answer_list.html"><i class="zmdi zmdi-check"></i> Answer</a></li>
+    <li><a href="../comment/comment_list.html"><i class="zmdi zmdi-sort-asc"></i> Comment</a></li>
+  </ul>
+</aside>
+
+<aside id="chat" class="sidebar c-overflow">
+
+  <div class="chat-search">
+    <div class="fg-line">
+      <input type="text" class="form-control" placeholder="Search People">
+    </div>
+  </div>
+
+</aside>
+<section id="content">
+  <div class="container">
+    <div class="block-header">
+      <h2>User Team</h2>
+    </div>
+    <!-- START CONTENT -->
+
+
+    <div class="card">
+      <div class="card-header">
+        <h2 id="user_team_title"></h2>
+      </div>
+
+      <div class="card-body card-padding">
+        <form role="form">
+          <div class="row" >
+            <div class="col-md-3">
+              <div class="form-group fg-line">
+
+                <input type="text" class="form-control input-lg" id="user_team_search" name="user_team_search" placeholder="Please, Search a team...">
+              </div>
+            </div>
+            <div class="col-md-2">
+              <button type="submit" id="btn_user_team_search" name="btn_user_team_search" class="btn bgm-blue_fifty btn-sm m-t-5"><i class="zmdi zmdi-search"></i></button>
+            </div>
+            <div class="col-md-7">
+              <!-- <div class="card"> -->
+              <!-- <div class="card-header">
+              <h2>Team Result</h2>
+            </div> -->
+
+            <div class="table-responsive">
+              <table id="tbl_team_result" class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Sport</th>
+                    <th>League</th>
+                    <th>Make Fan</th>
+                    <th>Commands</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+              </table>
+            </div>
+            <!-- </div> -->
+            <!-- <div class="card-header ch-alt">
+            <h2>Team Result</h2>
+          </div>
+
+          <table id="tbl_team_result" class="table table-striped table-vmiddle">
+          <thead>
+          <tr>
+          <th data-column-id="team_name">Name</th>
+          <th data-column-id="team_sport">Sport</th>
+          <th data-column-id="league_uuid">League</th>
+          <th data-column-id="Commands">Commands</th>
+        </tr>
+      </thead>
+      <tbody>
+    </tbody>
+  </table> -->
+</div>
+</div>
+</form>
+</div>
+</div>
+
+<div class="card">
+  <div class="card-header ch-alt">
+    <h2>Your Team List</h2>
+  </div>
+
+  <table id="tbl_team_by_user" class="table table-striped table-vmiddle">
+    <thead>
+      <br>
+      <tr>
+        <th data-column-id="team_name">Name</th>
+        <th data-column-id="team_sport">Sport</th>
+        <th data-column-id="league_uuid">League</th>
+        <th data-column-id="team_fan">FAN</th>
+        <th data-column-id="delete_user_team" data-formatter="commands" data-sortable="false">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</div>
+<div class="row">
+  <div class="pull-right">
+    <button id="btn_user_team_return" name="btn_user_team_return" class="btn btn-default btn-lg">Return</button> &nbsp; &nbsp;
+  </div>
+</div>
+</div>
+
+</form>
+</div>
+<!-- END CONTENT -->
+</div>
+</section>
+</section>
+
+<footer id="footer">
+  Copyright &copy; 2016 caribeDevelopers.com
+</footer>
+
+<!-- Page Loader -->
+<div class="page-loader">
+  <div class="preloader pls-blue">
+    <svg class="pl-circular" viewBox="25 25 50 50">
+      <circle class="plc-path" cx="50" cy="50" r="20" />
+    </svg>
+
+    <p>Please wait...</p>
+  </div>
+</div>
+
+<!-- Older IE warning message -->
+<!--[if lt IE 9]>
+<div class="ie-warning">
+<h1 class="c-white">Warning!!</h1>
+<p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+<div class="iew-container">
+<ul class="iew-download">
+<li>
+<a href="http://www.google.com/chrome/">
+<img src="img/browsers/chrome.png" alt="">
+<div>Chrome</div>
+</a>
+</li>
+<li>
+<a href="https://www.mozilla.org/en-US/firefox/new/">
+<img src="img/browsers/firefox.png" alt="">
+<div>Firefox</div>
+</a>
+</li>
+<li>
+<a href="http://www.opera.com">
+<img src="img/browsers/opera.png" alt="">
+<div>Opera</div>
+</a>
+</li>
+<li>
+<a href="https://www.apple.com/safari/">
+<img src="img/browsers/safari.png" alt="">
+<div>Safari</div>
+</a>
+</li>
+<li>
+<a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+<img src="img/browsers/ie.png" alt="">
+<div>IE (New)</div>
+</a>
+</li>
+</ul>
+</div>
+<p>Sorry for the inconvenience!</p>
+</div>
+<![endif]-->
+
+
+<!-- Javascript Libraries -->
+<script src="../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<script src="../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../vendors/bower_components/Waves/dist/waves.min.js"></script>
+<script src="../vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
+<script src="../vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.min.js"></script>
+
+<script src="../vendors/bower_components/moment/min/moment.min.js"></script>
+<script src="../vendors/bower_components/bootstrap-select/dist/js/bootstrap-select.js"></script>
+<script src="../vendors/bower_components/nouislider/distribute/jquery.nouislider.all.min.js"></script>
+<script src="../vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../vendors/bower_components/typeahead.js/dist/typeahead.bundle.min.js"></script>
+<script src="../vendors/summernote/dist/summernote-updated.min.js"></script>
+
+<!-- maxlength="50" placeholder for IE9 -->
+<!--[if IE 9 ]>
+<script src="../vendors/bower_components/jquery-maxlength="50" placeholder/jquery.maxlength="50" placeholder.min.js"></script>
+<![endif]-->
+<script src="../vendors/bower_components/chosen/chosen.jquery.min.js"></script>
+<script src="../vendors/fileinput/fileinput.min.js"></script>
+<script src="../vendors/input-mask/input-mask.min.js"></script>
+<script src="../vendors/farbtastic/farbtastic.min.js"></script>
+<script src="../vendors/bootgrid/jquery.bootgrid.updated.min.js"></script>
+
+<script src="../js/functions.js"></script>
+<script src="../js/caribedev.js"></script>
+<script src="../js/callback_caribe.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+  //Command Buttons
+
+  caribedev_read('user/', getParam('user_uuid'), function(data){
+    // data = $.parseJSON(data);
+    if (data.hasOwnProperty('error')) {
+      caribedev_team_list_by_user_error(data);
+    }
+    else {
+      $("#user_team_title").text('Choose a Team for user: '+data.user.user_name);
+    }
+  });
+
+  caribedev_read('team/team/by_user/', getParam('user_uuid'), function(data){
+    // data = $.parseJSON(data);
+    if (data.hasOwnProperty('error')) {
+      caribedev_team_list_by_user_error(data);
+    }
+    else {
+      caribedev_team_list_by_user_ok(data);
+    }
+  });
+});
+
+$("#btn_user_team_return").click(function(){
+  window.location.href = 'user_list.html';
+});
+
+function caribedev_team_list_by_user_ok(data){
+  // var data = $.parseJSON(data);
+  var len = data.team.length;
+  var sport ="";
+  var fan ="";
+  var league ="";
+
+  for(var i = 0; i < len ; i++ ){
+
+    caribedev_read('sport/', data.team[i].sport_uuid ,function(_sport){
+      if (_sport.hasOwnProperty('error')) {
+        caribedev_team_list_error(_sport);
+      }
+      else {
+        sport = _sport.sport.sport_name;
+      }
+    });
+
+    if (data.team[i].user_team_fan=="1"){
+      fan = "YES";
+    }
+    else {
+      fan = "NO";
+    }
+
+    caribedev_read('league/', data.team[i].league_uuid ,function(_league){
+      if (_league.hasOwnProperty('error')) {
+        caribedev_team_list_error(_sport);
+      }
+      else {
+        league = _league.league.league_name;
+      }
+    });
+
+    $("#tbl_team_by_user").bootgrid('append',
+    [{
+      team_id: '<a href="../team/team_detail.html?team_uuid=' +data.team[i].team_uuid+'">' + data.team[i].team_id + '</a>',
+      team_datetime_created: '<a href="../team/team_detail.html?team_uuid=' +data.team[i].team_uuid+'">' + format_date(data.team[i].team_create_datetime) + '</a>',
+      team_name: '<a href="../team/team_detail.html?team_uuid=' +data.team[i].team_uuid+'">' + data.team[i].team_name + '</a>',
+      team_sport: '<a href="../team/team_detail.html?team_uuid=' +data.team[i].team_uuid+'">' + sport + '</a>',
+      league_uuid: '<a href="../team/team_detail.html?team_uuid=' +data.team[i].team_uuid+'">' + league + '</a>',
+      team_fan: '<a href="../team/team_detail.html?team_uuid=' +data.team[i].team_uuid+'">' + fan + '</a>',
+      // make_fan: "<div class=\"toggle-switch\" onclick=\"make_user_fan(\'"+data.team[i].user_team_id+"\')\"  data-ts-color=\"red\"><input id=\"switc_huser_team_fan"+data.team[i].team_id+"\" type=\"checkbox\" hidden=\"hidden\"><label for=\"switc_huser_team_fan"+data.team[i].team_id+"\" class=\"ts-helper\"></label></div>",
+      delete_user_team:"<button type=\"button\" onclick=\"delete_button(\'"+data.team[i].user_team_id+"\')\" class=\"btn btn-icon command-delete waves-effect waves-circle\" data-row-id=\"" + data.team[i].user_team_id+ "\"><span class=\"zmdi zmdi-delete\"></span></button>"
+    }]
+  ).on("loaded.rs.jquery.bootgrid", function () {
+
+  });
+  available ="";
+}
+}
+
+
+$("#btn_user_team_search").click(function (e) {
+  e.preventDefault();
+
+  var _user_team_search = $("#user_team_search").val();
+
+  if(_user_team_search.length<3)
+  {
+    notify(undefined, undefined, undefined, 'warning', "animated bounceIn", undefined, 'Sorry, please type 3 letters almost');
+  }
+  else {
+
+    $("#tbl_team_result>tbody").empty();
+    caribedev_read('team/by_name/', $("#user_team_search").val(), function(data){
+      if (data.hasOwnProperty('error')) {
+        caribedev_user_team_search_error(data);
+      }
+      else {
+        caribedev_user_team_search_ok(data);
+      }
+    });
+  }
+});
+
+
+// SUCCESS SECTION
+function caribedev_user_team_search_ok(data){
+  // var data = $.parseJSON(data);
+  var len = data.team.length;
+
+  if (len == 0){
+    notify(undefined, undefined, undefined, 'info', "animated bounceIn", undefined, 'Tem Not found, please enter another team name');
+  }
+  else{
+    var _row ="";
+    var league ="";
+
+    for(var i = 0; i < len ; i++ ){
+
+      caribedev_read('sport/', data.team[i].sport_uuid ,function(_sport){
+        if (_sport.hasOwnProperty('error')) {
+          caribedev_team_list_error(_sport);
+        }
+        else {
+          sport = _sport.sport.sport_name;
+        }
+      });
+
+      caribedev_read('league/', data.team[i].league_uuid ,function(_league){
+        if (_league.hasOwnProperty('error')) {
+          caribedev_team_list_error(_sport);
+        }
+        else {
+          league = _league.league.league_name;
+        }
+      });
+
+      _row += '<tr>';
+      _row += '<td><a href="../team/team_detail.html?team_uuid=' +data.team[i].team_uuid+'">' + data.team[i].team_name + '</a></td>';
+      _row += '<td><a href="../team/team_detail.html?team_uuid=' +data.team[i].team_uuid+'">' + sport + '</a></td>';
+      _row += '<td><a href="../team/team_detail.html?team_uuid=' +data.team[i].team_uuid+'">' + league+ '</a></td>';
+      _row += '<td><div class="checkbox m-b-15"><label><input class=\"user_team_fan\" id=\"user_team_fan_'+data.team[i].team_uuid+'\"type=\"checkbox\" value=\"\"><i class="input-helper"></i></label></div></td>';
+      _row += '<td><a onclick=\"add_team_to_user(\''+data.team[i].team_uuid+'\')\" class=\"btn bgm-blue_fifty btn-sm m-t-5\"><i class=\"zmdi zmdi-plus-circle-o zmdi-hc-fw\"></i></a></td>';
+      // _row += '<td><button onclick=\"add_team_to_user(\'"+data.team[i].team_uuid+"\')\" class=\"btn btn-icon waves-effect waves-circle\" data-row-id=\"" + data.team[i].team_uuid+ "\"><span class=\"zmdi zmdi-add\"></span></button></td>';
+      _row += '</tr>';
+
+      $("#tbl_team_result>tbody").append(_row);
+    }
+  }
+}
+
+function add_team_to_user(team_uuid){
+  var user_team_fan = 0;
+
+  user_team_fan=($('#user_team_fan_'+team_uuid).prop('checked') ? '1' : '0');
+
+  var user_uuid = getParam('user_uuid');
+
+  caribedev_read('team/team/by_user/', getParam('user_uuid'), function(data){
+    // data = $.parseJSON(data);
+    if (data.hasOwnProperty('error')) {
+      caribedev_team_list_by_user_error(data);
+    }
+    else {
+
+      var len = data.team.length;
+      var a=0;
+      for(var i = 0; i < len ; i++ ){
+        if (data.team[i].team_uuid== team_uuid){
+          a++;
+        }
+      }
+
+      if (a>0){
+        notify(undefined, undefined, undefined, 'danger', "animated bounceIn", undefined, 'Sorry, this team is alredy follow for this user, select other team');
+        $('#tbl_team_result>tbody').empty();
+      }
+      else{
+        var user_team ={
+          user_uuid:getParam('user_uuid'),
+          team_uuid:team_uuid,
+          user_team_fan: user_team_fan
+        };
+        caribedev_create( user_team,'user_team/', function(data){
+          data = $.parseJSON(data);
+          if (data.hasOwnProperty('error')) {
+            caribedev_team_delete_error(data);
+          }
+          else {
+            caribedev_user_team_create_ok(data);
+          }
+        });
+      }
+
+    }
+  });
+}
+
+function caribedev_user_team_create_ok(data){
+
+  caribedev_read('team/team/by_user/', data.user.user_uuid, function(data){
+    if (data.hasOwnProperty('error')){
+      caribedev_team_detail_error(data);
+    }
+    else {
+      $("#tbl_team_by_user>tbody").empty();
+      //var data = $.parseJSON(data);
+      var len = data.team.length;
+      var sport ="";
+      var fan ="";
+      var league ="";
+
+      window.setTimeout(function(){
+        location.reload();
+      }, 1500);
+      notify(undefined, undefined, undefined, 'success', "animated bounceIn", undefined, 'Team Added Successfully!');
+
+    }
+  });
+
+}
+function delete_button(user_team_id){
+
+  caribedev_delete('user_team/', user_team_id, function(data){
+    data = $.parseJSON(data);
+    if (data.hasOwnProperty('error')) {
+      caribedev_user_team_delete_error(data);
+    }
+    else {
+      caribedev_user_team_delete_ok(data);
+    }
+  });
+}
+
+function caribedev_user_team_delete_ok(data){
+  notify(undefined, undefined, undefined, 'success', "animated bounceIn", undefined, 'Team Deleted Successfully!');
+
+  window.setTimeout(function(){
+    location.reload();
+  }, 1500);
+}
+
+function make_user_fan(user_team_id){
+
+  caribedev_update("", 'user_team/', user_team_id, function(data){
+    data = $.parseJSON(data);
+    if (data.hasOwnProperty('error')) {
+      caribedev_user_team_make_fan_error(data);
+    }
+  });
+}
+function caribedev_user_create_error(data) {
+  notify(undefined, undefined, undefined, 'danger', "animated bounceIn", undefined, 'Sorry, user not created, Please contact your system administrator');
+  $("#btn_user_create").removeAttr('disabled');
+  console.log(data);
+}
+
+</script>
+
+</body>
+</html>

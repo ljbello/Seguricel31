@@ -1,0 +1,36 @@
+[data-ma-theme="LightBlueSeguricel"] {
+  background-color: #88C3EB;
+}
+.bgm-BlueSeguricel {
+  background-color: #0186BE !important;
+}
+.bgm-OrangeSeguricel {
+  background-color: #FD7637 !important;
+}
+.bgm-RedSeguricel {
+  background-color: #FF5859 !important;
+}
+.bgm-GreenSeguricel {
+  background-color: #11C9B0 !important;
+}
+.bgm-GraySeguricel {
+  background-color: #D1CDE6 !important;
+}
+.bgm-BlueSc {
+  background-color: #C5C7C6 !important;
+}
+.bgm-WhiteSeguricel {
+  background-color: #FEFEFE !important;
+}
+.c-BlueSeguricel {
+  color: #0186BE !important;
+}
+
+nav ul{height:200px; width:18%;}
+nav ul{overflow:hidden; overflow-y:scroll;}
+
+
+div.first {
+    opacity: 0.1;
+    filter: alpha(opacity=10); /* For IE8 and earlier */
+}

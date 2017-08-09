@@ -1,0 +1,349 @@
+
+<!DOCTYPE html>
+<!--[if IE 9 ]><html class="ie9"><![endif]-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BIG FIFTY</title>
+
+  <!-- Vendor CSS -->
+  <link href="../vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+  <link href="../vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.css" rel="stylesheet">
+  <link href="../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+  <link href="../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+  <link href="../vendors/bootgrid/jquery.bootgrid.min.css" rel="stylesheet">
+
+  <!-- CSS -->
+  <link href="../css/app.min.1.css" rel="stylesheet">
+  <link href="../css/app.min.2.css" rel="stylesheet">
+  <link href="../css/caribedev.css" rel="stylesheet">
+</head>
+
+<body>
+  <header id="header" class="clearfix" data-current-skin="blue_fifty">
+    <ul class="header-inner">
+      <li id="menu-trigger" data-trigger="#sidebar">
+        <div class="line-wrap">
+          <div class="line top"></div>
+          <div class="line center"></div>
+          <div class="line bottom"></div>
+        </div>
+      </li>
+
+      <li class="logo hidden-xs">
+        <a href="../index.html">BIGFIFTY</a>
+      </li>
+
+      <!-- <li class="pull-right">
+      <ul class="top-menu">
+      <li class="hidden-xs" id="chat-trigger" data-trigger="#chat">
+      <a href=""><i class="tm-icon zmdi zmdi-comment-alt-text"></i></a>
+    </li>
+  </ul>
+</li> -->
+</ul>
+
+
+<!-- Top Search Content -->
+<div id="top-search-wrap">
+  <div class="tsw-inner">
+    <i id="top-search-close" class="zmdi zmdi-arrow-left"></i>
+    <input type="text">
+  </div>
+</div>
+</header>
+
+<section id="main">
+  <aside id="sidebar" class="sidebar c-overflow">
+    <div class="game_profile_menu">
+      <a href="">
+        <!-- <div class="profile-pic">
+        <img src="img/all_sports.jpg" alt="">
+      </div> -->
+    </a>
+  </div>
+
+  <ul class="main-menu">
+    <li><a href="../user/user_list.html"><i class="zmdi zmdi-face"></i> User</a></li>
+    <li><a href="../sport/sport_list.html"><i class="zmdi zmdi-run"></i> Sport</a></li>
+    <li><a href="../league/league_list.html"><i class="zmdi zmdi-star"></i> League</a></li>
+    <li><a href="../category/category_list.html"><i class="zmdi zmdi-star-circle"></i> Category</a></li>
+    <li><a href="../life/life_list.html"><i class="zmdi zmdi-accounts-outline"></i> Life</a></li>
+    <li><a href="../team/team_list.html"><i class="zmdi zmdi-map"></i> Team</a></li>
+    <li><a href="../game/game_list.html"><i class="zmdi zmdi-gamepad"></i> Game</a></li>
+    <li><a href="../challenge/challenge_list.html"><i class="zmdi zmdi-flash"></i> Challenge</a></li>
+    <li><a href="../question/question_list.html"><i class="zmdi zmdi-help-outline"></i> Question</a></li>
+    <li><a href="../answer/answer_list.html"><i class="zmdi zmdi-check"></i> Answer</a></li>
+    <li><a href="../comment/comment_list.html"><i class="zmdi zmdi-sort-asc"></i> Comment</a></li>
+  </ul>
+</aside>
+
+<section id="content">
+  <div class="container">
+    <div class="block-header">
+      <h2>Question</h2>
+    </div>
+    <!-- START CONTENT -->
+    <div class="card">
+      <div class="card-header ch-alt">
+        <h2>Edit a question</h2>
+      </div>
+      <form method="post" enctype="multipart/form-data" role="form" id="frm_question">
+        <div class="card-body card-padding">
+          <input hidden id="question_status" name="question_status" value="1">
+           <div class="row">
+              <input hidden id="question_status" name="question_status" value="1">
+              <br>
+              <div class=" col-md-3">
+                <br>
+                <div class="input-group fg-float">
+                  <span class="input-group-addon"><i class="zmdi zmdi-help"></i></span>
+                  <div class="fg-line fg-toggled">
+                    <textarea required type="text" maxlength="500" class="form-control input-lg input-fg" id="question_description" name="question_description" ></textarea>
+                    <label class="fg-label">Question description</label>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <br>
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="zmdi zmdi-map"></i></span>
+                  <div class="fg-line fg-toggled">
+                    <div class="select">
+                      <select class="form-control input-lg" id="team_uuid" name="team_uuid">
+                        <option value="-1">Choose a Team...</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <br>
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="zmdi zmdi-star-circle"></i></span>
+                  <div class="fg-line fg-toggled">
+                    <div class="select">
+                      <select class="form-control input-lg" id="category_uuid" name="category_uuid">
+                        <option value="-1">Choose a Category...</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+            <div class="col-md-3">
+              <br>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="zmdi zmdi-map"></i></span>
+                <div class="fg-line fg-toggled">
+                  <div class="select">
+                    <select class="form-control input-lg" id="answer_uuid" name="answer_uuid">
+                      <option value="-1">Choose an Answer...</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+            <br>
+            <br>
+            <div class="row">
+              <div class="pull-right">
+                <a id="btn_question_return" name="btn_question_return" class="btn btn-default btn-lg">Return</a> &nbsp; &nbsp;
+                <button id="btn_question_save" name="btn_question_save" type="submit" class="btn bgm-blue_fifty btn-lg">Save</button>
+              </div>
+            </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <!-- END CONTENT -->
+</div>
+</section>
+</section>
+
+<footer id="footer">
+  Copyright &copy; 2016 caribeDevelopers.com
+</footer>
+
+<!-- Page Loader -->
+<div class="page-loader">
+  <div class="preloader pls-blue">
+    <svg class="pl-circular" viewBox="25 25 50 50">
+      <circle class="plc-path" cx="50" cy="50" r="20" />
+    </svg>
+
+    <p>Please wait...</p>
+  </div>
+</div>
+
+<!-- Javascript Libraries -->
+<script src="../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<script src="../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../vendors/bower_components/Waves/dist/waves.min.js"></script>
+<script src="../vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
+<script src="../vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.min.js"></script>
+
+<!-- Placeholder for IE9 -->
+<!--[if IE 9 ]>
+<script src="../vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+<![endif]-->
+
+<script src="../js/functions.js"></script>
+<script src="../js/caribedev.js"></script>
+<script src="../js/callback_caribe.js"></script>
+<script type="text/javascript">
+var question_to_edit = getParam('question_uuid');
+$(window).load(function() {
+  caribedev_read('question/', question_to_edit, function(data){
+    if (data.hasOwnProperty('error') || data.question.question_description== null) {
+      caribedev_question_detail_error(data);
+    }
+    else {
+      caribedev_question_detail_ok(data);
+    }
+  });
+  function caribedev_question_detail_ok(data) {
+    console.log(data);
+    window.setTimeout(function(){
+      $('#question_description').val(data.question.question_description);
+      var _team_uuid = data.question.team_uuid;
+      var category_uuid = data.question.category_uuid;
+      var answer_uuid = data.question.answer_uuid;
+      $('#category_uuid').val(category_uuid);
+      $('#team_uuid').val(_team_uuid);
+      $('#answer_uuid').val(answer_uuid);
+    }, 500);
+  }
+});
+
+$(document).ready(function () {
+  caribedev_list('sport', function (data) {
+    data = $.parseJSON(data);
+    if (data.hasOwnProperty('error')) {
+      caribedev_sport_list_error(data);
+    } else {
+      caribedev_sport_list_ok(data);
+    }
+  });
+
+  caribedev_list('team', function (data) {
+    data = $.parseJSON(data);
+    if (data.hasOwnProperty('error')) {
+      caribedev_team_list_error(data);
+    } else {
+      caribedev_team_list_ok(data);
+    }
+  });
+
+  caribedev_list('category', function (data) {
+    data = $.parseJSON(data);
+    if (data.hasOwnProperty('error')) {
+      caribedev_category_list_error(data);
+    } else {
+      caribedev_category_list_ok(data);
+    }
+  });
+
+  caribedev_list('answer', function (data) {
+    data = $.parseJSON(data);
+    if (data.hasOwnProperty('error')) {
+      caribedev_answer_list_error(data);
+    } else {
+      caribedev_answer_list_ok(data);
+    }
+  });
+});
+
+function caribedev_category_list_ok(data) {
+  $('#category_uuid').empty().append('<option selected="selected" value="">Choose a Category...</option>');
+  $.each(data.category, function (i, item) {
+    var div_data = "<option value=" + item.category_uuid + ">" + item.category_name + "</option>";
+    $(div_data).appendTo('#category_uuid');
+  });
+}
+
+function caribedev_sport_list_ok(data) {
+  $.each(data.sport, function (i, item) {
+    var div_data = "<option value=" + item.sport_uuid + ">" + item.sport_name + "</option>";
+    $(div_data).appendTo('#sport_uuid');
+  });
+}
+
+function caribedev_answer_list_ok(data) {
+  $('#answer_uuid').empty().append('<option selected="selected" value="">Choose an Answer...</option>');
+  $.each(data.answers, function (i, item) {
+    var div_data = "<option value=" + item.answer_uuid + ">" + item.answer_description + "</option>";
+    $(div_data).appendTo('#answer_uuid');
+  });
+}
+
+function caribedev_team_list_ok(data) {
+  $.each(data.team, function (i, item) {
+    var div_data = "<option value=" + item.team_uuid + ">" + item.team_name + "</option>";
+    $(div_data).appendTo('#team_uuid');
+  });
+}
+
+
+$('#frm_question').submit(function(e){
+  //$("#btn_team_save").click(function (e) {
+  var ref = $(this).find("[required]");
+  $(ref).each(function(){
+    if ( $(this).val() == '' )
+    {
+      notify(undefined, undefined, undefined, 'warning', "animated bounceIn", undefined, "Please, check the fields.");
+      $(this).focus();
+      e.preventDefault();
+      isValidated = false;
+
+      return false;
+    }
+  });
+  e.preventDefault();
+  $("#btn_question_save").attr('disabled', 'disabled');
+
+  var question = $("#frm_question").serialize();
+  caribedev_update(question, 'question/', question_to_edit, function(data){
+    var data = $.parseJSON(data);
+    if (data.hasOwnProperty('error')) {
+      caribedev_question_update_error(data);
+    }
+    else {
+      caribedev_question_update_ok(data);
+    }
+  });
+
+});
+
+function caribedev_question_update_ok(data){
+  notify(undefined, undefined, undefined, 'success', "animated bounceIn", undefined, 'Question updated Successfully!');
+  window.setTimeout(function(){
+    window.location.href = "question_list.html";
+  }, 2050);
+}
+//ERROR SECTION
+function caribedev_question_update_error(data){
+  notify(undefined, undefined, undefined, 'danger', "animated bounceIn", undefined, 'Sorry, question not updated, Please contact your system administrator');
+  window.setTimeout(function(){
+    window.location.href = "question_list.html";
+  }, 3050);
+}
+
+function caribedev_question_detail_error(data){
+  notify(undefined, undefined, undefined, 'danger', "animated bounceIn", undefined, 'Sorry, question not find, Please contact your system administrator');
+  window.setTimeout(function(){
+    window.location.href = "question_list.html";
+  }, 3050);
+}
+$("#btn_question_return").click(function(){
+  window.location.href = 'question_list.html';
+});
+</script>
+</body>
+</html>
